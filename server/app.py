@@ -12,7 +12,7 @@ import soundfile as sf
 import librosa
 
 # Import custom model architecture
-from model import AudioCNN
+from src.components.model import AudioCNN
 
 # Initialize Modal app
 app = modal.App("audio-cnn-inference")
@@ -23,7 +23,7 @@ image = (modal.Image.debian_slim()
          .pip_install_from_requirements("requirements.txt")
          # Install system libraries for audio processing
          .apt_install(["libsndfile1"])
-         .add_local_python_source("model"))  # Add local model code
+         .add_local_python_source("src.components.model"))  # Add local model code
 
 # Create volume for storing model weights
 model_volume = modal.Volume.from_name("esc-model")
