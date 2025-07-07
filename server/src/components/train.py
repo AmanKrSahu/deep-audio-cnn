@@ -14,7 +14,7 @@ from torch.optim.lr_scheduler import OneCycleLR
 from tqdm import tqdm  # For progress bars
 from torch.utils.tensorboard import SummaryWriter  # For logging
 
-from model import AudioCNN  # Our custom CNN model
+from src.components.model import AudioCNN  # Our custom CNN model
 
 # Define Modal app and Docker image configuration
 app = modal.App("audio-cnn")
